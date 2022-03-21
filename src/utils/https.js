@@ -1,3 +1,4 @@
+// For making API queries.
 import axios from "axios";
 
 axios.interceptors.request.use((config) => {

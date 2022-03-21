@@ -10,22 +10,18 @@ import { NavLink } from "react-router-dom";
 import { useStyles } from "./HeaderStyle";
 
 import DashboardIcon from "@material-ui/icons/Dashboard";
-import BookIcon from "@material-ui/icons/Book";
-import PostAddIcon from "@material-ui/icons/PostAdd";
-import NotificationsActiveIcon from "@material-ui/icons/NotificationsActive";
+import SettingsIcon from "@material-ui/icons/Settings";
+
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import GroupsIcon from "@material-ui/icons/Group";
+// import SettingsIcon from '@mui/icons-material/Settings';
 
 export default function SidenavData({ handleDrawerClose }) {
   const classes = useStyles();
   const listItemData = [
     { label: "Dashboard", link: "/", icon: <DashboardIcon /> },
-    { label: "Blog Post", link: "/blog", icon: <BookIcon /> },
-    { label: "Link 1", link: "/link1", icon: <PostAddIcon /> },
-    {
-      label: "Notification",
-      link: "/notification",
-      icon: <NotificationsActiveIcon />,
-    },
+    { label: "Team", link: "/blog", icon: <GroupsIcon /> },
+    { label: "Settings", link: "/link1", icon: <SettingsIcon /> },
     { label: "logout", link: "/logout", icon: <ExitToAppIcon /> },
   ];
 
@@ -33,16 +29,18 @@ export default function SidenavData({ handleDrawerClose }) {
     <List>
       {listItemData.map((item, i) => (
         <Button
-          size='small'
+          size="small"
           onClick={() => handleDrawerClose()}
-          className={classes.navButton}>
+          className={classes.navButton}
+        >
           <ListItem
             exact
             key={i}
             component={NavLink}
             to={item.link}
             className={classes.navlink}
-            activeClassName={classes.selectedNav}>
+            activeClassName={classes.selectedNav}
+          >
             <ListItemIcon>{item.icon}</ListItemIcon>
             <ListItemText>{item.label}</ListItemText>
           </ListItem>

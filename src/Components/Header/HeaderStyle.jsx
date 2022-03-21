@@ -5,6 +5,13 @@ export const useStyles = makeStyles((theme) => {
   console.log(theme.breakpoints);
   return {
     //common
+    iconSize: {
+      width: "40px",
+      height: "40px",
+      borderRadius: "50%",
+      color: "White",
+      backgroundColor: blue["A400"],
+    },
     navImg: {
       width: "35px",
       height: "35px",
@@ -26,6 +33,7 @@ export const useStyles = makeStyles((theme) => {
       },
     },
     logo: {
+      marginLeft: "10px",
       lineHeight: "47px",
       color: "inherit",
     },
@@ -36,6 +44,7 @@ export const useStyles = makeStyles((theme) => {
       display: "flex",
       flexFlow: "row wrap",
       justifyContent: "space-between",
+      backgroundColor: "#030F27",
     },
     brandBox: {
       display: "flex",
